@@ -10,24 +10,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 
+<%--
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+--%>
+    <link href='<c:url value="/resources/css/style.css"/>' rel="stylesheet" type="text/css">
+
 </head>
 <body>
-<header class="header--main-page">
-    <nav class="container container--70">
-        <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
-        </ul>
+<%@ include file="/WEB-INF/fragments/header.jspf" %>
 
-        <ul>
-            <li><a href="#" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="#" class="btn btn--without-border">O nas</a></li>
-            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
-        </ul>
-    </nav>
+<header class="header--main-page">
 
     <div class="slogan container container--90">
         <div class="slogan--item">
