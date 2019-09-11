@@ -88,6 +88,9 @@
         <img src="images/signature.svg" class="about-us--text-signature" alt="Signature"/>
     </div>
     <div class="about-us--image"><img src="<c:url value="resources/images/about-us.jpg"/>" alt="People in circle"/>
+
+        <link href='<c:url value="/resources/css/style.css"/>' rel="stylesheet" type="text/css">
+
     </div>
 </section>
 
