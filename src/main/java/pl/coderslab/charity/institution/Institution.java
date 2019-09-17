@@ -1,16 +1,18 @@
-package pl.coderslab.charity.category;
+package pl.coderslab.charity.institution;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="categories")
-public class Category {
+@Table(name = "institutions")
+public class Institution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
+
+    private String description;
 
     public Long getId() {
         return id;
@@ -28,11 +30,20 @@ public class Category {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
-        return "Category{" +
+        return "Institution{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
