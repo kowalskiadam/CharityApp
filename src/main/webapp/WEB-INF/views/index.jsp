@@ -2,6 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 
 <body>
 <%@ include file="/WEB-INF/fragments/header.jspf" %>
@@ -86,7 +88,15 @@
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
             Możesz sprawdzić czym się zajmują.</p>
 
-        <ul class="help--slides-items">
+        <c:forEach var="institution" items="${fourInstitutions}">
+            <tr>
+                <td>${institution.name}</td>
+                <td>${institution.description}</td>
+            </tr>
+
+        </c:forEach>
+
+<%--        <ul class="help--slides-items">
             <li>
                 <div class="col">
                     <div class="title">Fundacja "Dbam o Zdrowie"</div>
@@ -111,7 +121,7 @@
 
             </li>
 
-        </ul>
+        </ul>--%>
     </div>
 
 </section>
