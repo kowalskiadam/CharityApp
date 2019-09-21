@@ -88,13 +88,33 @@
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
             Możesz sprawdzić czym się zajmują.</p>
 
-        <c:forEach var="institution" items="${fourInstitutions}">
-            <tr>
-                <td>${institution.name}</td>
-                <td>${institution.description}</td>
-            </tr>
+
+        <ul class="help--slides-items">
+
+        <c:forEach varStatus="loop" var="institution" items="${fourInstitutions}">
+
+            <c:choose>
+                <c:when test="${(loop.index+1) % 2 == 1}"><li></c:when>
+                <c:otherwise>        </c:otherwise>
+
+
+            </c:choose>
+
+            <div class="col">
+                <div class="title">${institution.name}</div>
+                <div class="subtitle">${institution.description}</div>
+            </div>
+
+            <c:choose>
+                <c:when test="${(loop.index+1) % 2 == 0}"></li></c:when>
+                <c:otherwise>        </c:otherwise>
+
+            </c:choose>
+
 
         </c:forEach>
+
+        </ul>
 
 <%--        <ul class="help--slides-items">
             <li>
