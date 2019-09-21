@@ -19,4 +19,8 @@ public class InstitutionService {
         List<Institution> institutions = new ArrayList<>();
         return institutionRepository.findTop4ByOrderById();
     }
+
+    public Long allInstitution(){
+        return institutionRepository.count();
+    }
 }

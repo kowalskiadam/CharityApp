@@ -10,4 +10,6 @@ public interface InstitutionRepository extends JpaRepository<Institution, Long> 
 
     List<Institution> findTop4ByOrderById();
 
+
+
 }
