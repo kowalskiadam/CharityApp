@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface InstitutionRepository extends JpaRepository<Institution, Long> {
 
     List<Institution> findTop4ByOrderById();
