@@ -8,19 +8,17 @@
 <body>
 <%@ include file="/WEB-INF/fragments/header.jspf" %>
 
-<div class="form-group--checkbox">
+<div class="form--steps">
     <h2>addDonation1</h2>
-        <div >
-            <form:form method="post" modelAttribute="donationPart1">
-                <form:checkboxes items="${allCategories}" path="categories"  itemLabel="name" itemValue="id" />
-                <%--        <c:forEach var="category" items="${allCategories}">
-                            <input type="checkbox" id="category${category.id}" name="subscribe" path="${donationPart1.categories}" value="category">
-                            <label for="category${category.id}">${category.name}</label>
+        <div class="form--steps-container" >
+            <div class="form-group--checkbox">
+                <form:form method="post" modelAttribute="donationPart1">
+                    <form:checkboxes items="${allCategories}" path="categories"  itemLabel="name" itemValue="id" />
+                    <input type="submit" value="Wybierz kategorię">
 
-                        </c:forEach>--%>
-                <input type="submit" value="Wybierz kategorię">
+                </form:form>
+            </div>
 
-            </form:form>
         </div>
 
 </div>
