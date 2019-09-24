@@ -8,7 +8,15 @@
 <body>
 <%@ include file="/WEB-INF/fragments/header.jspf" %>
 
+<div>
+    <div>Podaj liczbę 60l worków, w któe spakowałeś/aś rzeczy</div>
+        <form:form method="post" modelAttribute="donationPart3">
+            <form:radiobuttons items="${allInstitutions}" path="institution"  itemLabel="name" />
+            <br>
+            <input type="submit" value="Wybierz instytucję">
+        </form:form>
 
+</div>
 
 
 <script src="<c:url value="resources/js/app.js"/>"></script>

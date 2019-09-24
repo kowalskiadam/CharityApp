@@ -20,7 +20,11 @@ public class InstitutionService {
         return institutionRepository.findTop4ByOrderById();
     }
 
-    public Long allInstitution(){
+    public Long allInstitutionCount(){
         return institutionRepository.count();
     }
+
+    public List<Institution> allInstitution(){return institutionRepository.findAll();}
+
+    public Institution findFirst() {return institutionRepository.findTop1ByOrderById();}
 }

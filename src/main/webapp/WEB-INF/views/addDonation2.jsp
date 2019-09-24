@@ -8,7 +8,17 @@
 <body>
 <%@ include file="/WEB-INF/fragments/header.jspf" %>
 
+<div>
+    <div>Podaj liczbę 60l worków, w któe spakowałeś/aś rzeczy</div>
+    <form:form method="post" modelAttribute="donationPart2">
+        <label for="quantity">Number of weeks in plan:</label>
+        <form:input type="number" value = "${donation.quantity}" path="quantity" id="quantity"/>
+<br>
 
+        <input type="submit" value="Potwierdź ilość">
+
+        </form:form>
+</div>
 
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
