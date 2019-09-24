@@ -10,7 +10,7 @@
 
 <div class="form--steps">
     <h2>addDonation1</h2>
-        <div class="form--steps-container" >
+        <div class="form-group--checkbox" >
             <div class="form-group--checkbox">
                 <form:form method="post" modelAttribute="donationPart1">
                     <form:checkboxes items="${allCategories}" path="categories"  itemLabel="name" itemValue="id" />

@@ -19,36 +19,41 @@ import java.util.List;
 
 public class DonationController {
 
-    private final DonationPart1 donationPart1;
     private final DonationService donationService;
     private final CategoryService categoryService;
     private final Validator validator;
+    private final Donation donation;
 
-    public DonationController(DonationPart1 donationPart1, DonationService donationService, CategoryService categoryService, Validator validator) {
-        this.donationPart1 = donationPart1;
+    public DonationController(DonationPart1 donationPart1, DonationService donationService, CategoryService categoryService, Validator validator, Donation donation) {
         this.donationService = donationService;
         this.categoryService = categoryService;
         this.validator = validator;
+        this.donation = donation;
     }
 
 
     @GetMapping(value = "/1")
     public String showAddDonation1(Model model){
-        model.addAttribute("allCategories", categoryService.allCatiegories());
-        model.addAttribute("donationPart1", donationPart1);
+        model.addAttribute("donationPart1", new DonationPart1());
         return "addDonation1";
     }
 
     @PostMapping(value = "/1")
-    public String addDonation1(@ModelAttribute @Valid DonationPart1 donationPart1, BindingResult bindingResult){
+    public String addDonation1(@ModelAttribute @Valid DonationPart1 donationPart1, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
+            model.addAttribute("donationPart1", donationPart1);
             return "addDonation1";
         }
-        Donation donation = new Donation();
         List<Category> categories = donationPart1.getCategories();
         donation.setCategories(categories);
-        donationService.save(donation);
+        System.out.println(donation.toString());
         return "redirect:/";
     }
+
+    @ModelAttribute("allCategories")
+    public List<Category> allCategories(){
+        return categoryService.allCatiegories();
+    }
+
 
 }
